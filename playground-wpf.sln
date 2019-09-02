@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "playground-wpf", "playgroun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseIt", "ExpenseIt\ExpenseIt.csproj", "{A1EE9703-4B12-4C21-90E7-0AB4AB26E1B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimatedButton", "AnimatedButton\AnimatedButton.csproj", "{CF4AAA67-D775-40A6-8A6C-E9B8B945F6A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A1EE9703-4B12-4C21-90E7-0AB4AB26E1B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1EE9703-4B12-4C21-90E7-0AB4AB26E1B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1EE9703-4B12-4C21-90E7-0AB4AB26E1B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF4AAA67-D775-40A6-8A6C-E9B8B945F6A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF4AAA67-D775-40A6-8A6C-E9B8B945F6A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF4AAA67-D775-40A6-8A6C-E9B8B945F6A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF4AAA67-D775-40A6-8A6C-E9B8B945F6A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
