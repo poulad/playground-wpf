@@ -43,7 +43,7 @@
                             <!-- Glass Rectangle -->
                             <Rectangle x:Name="glassCube" HorizontalAlignment="Stretch"
                                        VerticalAlignment="Stretch"
-                                       StrokeThickness="2" RadiusX="10" RadiusY="10" Opacity="01"
+                                       StrokeThickness="2" RadiusX="10" RadiusY="10" Opacity="0"
                                        Fill="{StaticResource MyGlassBrushResource}"
                                        RenderTransformOrigin="0.5,0.5">
                                 <Rectangle.Stroke>
@@ -75,6 +75,77 @@
                             </DockPanel>
 
                         </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <!-- Set properties when mouse pointer is over the button. -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <!-- Below are three property settings that occur when the
+                                     condition is met (user mouses over button).  -->
+                                <!-- Change the color of the outer rectangle when user
+                                        mouses over it. -->
+                                <Setter Property ="Rectangle.Stroke" TargetName="OuterRectangle"
+                                        Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                                <!-- Sets the glass opacity to 1, therefore, the
+                                        glass "appears" when user mouses over it. -->
+                                <Setter Property="Rectangle.Opacity" Value="1" TargetName="glassCube" />
+                                <!-- Makes the text slightly blurry as though you
+                                    were looking at it through blurry glass. -->
+                                <Setter Property="ContentPresenter.BitmapEffect" TargetName="MyContentPresenter">
+                                    <Setter.Value>
+                                        <BlurBitmapEffect Radius="1" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <!-- Set properties when button has focus. -->
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="Rectangle.Opacity" Value="1" TargetName="glassCube" />
+                                <Setter Property="Rectangle.Stroke" TargetName="OuterRectangle" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                                <Setter Property="Rectangle.Opacity" Value="1" TargetName="glassCube" />
+                            </Trigger>
+
+                            <!-- Animations that start when mouse enters and leaves button. -->
+                            <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard Name="mouseEnterBeginStoryboard">
+                                        <Storyboard>
+                                            <!-- This animation makes the glass rectangle shrink in the X direction. -->
+                                            <DoubleAnimation Storyboard.TargetName="glassCube"
+                                                             Storyboard.TargetProperty=
+                                                             "(Rectangle.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                                             By="-0.1" Duration="0:0:0.5" />
+                                            <!-- This animation makes the glass rectangle shrink in the Y direction. -->
+                                            <DoubleAnimation
+                                                Storyboard.TargetName="glassCube"
+                                                Storyboard.TargetProperty=
+                                                "(Rectangle.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                                By="-0.1" Duration="0:0:0.5" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                                <EventTrigger.Actions>
+                                    <!-- Stopping the storyboard sets all animated properties back to default. -->
+                                    <StopStoryboard BeginStoryboardName="mouseEnterBeginStoryboard" />
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+
+                            <!-- Animation fires when button is clicked, causing glass to spin.  -->
+                            <EventTrigger RoutedEvent="Button.Click">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="glassCube"
+                                                             Storyboard.TargetProperty=
+                                                             "(Rectangle.RenderTransform).(TransformGroup.Children)[1].(RotateTransform.Angle)"
+                                                             By="360" Duration="0:0:0.5" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
