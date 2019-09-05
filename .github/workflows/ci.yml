@@ -1,0 +1,8 @@
+name: Continuous Integration
+on: push
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
