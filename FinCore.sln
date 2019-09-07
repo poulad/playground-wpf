@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.152
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5E5FF15F-F0A3-443D-80B3-5EC5BFCE6303}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinCore", "src\FinCore\FinCore.csproj", "{F3F605B7-0B04-40AE-A708-275F22692451}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3F605B7-0B04-40AE-A708-275F22692451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3F605B7-0B04-40AE-A708-275F22692451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3F605B7-0B04-40AE-A708-275F22692451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3F605B7-0B04-40AE-A708-275F22692451}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F3F605B7-0B04-40AE-A708-275F22692451} = {5E5FF15F-F0A3-443D-80B3-5EC5BFCE6303}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F77F462B-9F3E-4D81-A668-B929EFAD4C68}
+	EndGlobalSection
+EndGlobal
