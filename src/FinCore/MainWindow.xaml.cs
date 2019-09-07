@@ -11,5 +11,12 @@ namespace FinCore
         {
             InitializeComponent();
         }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var connection = IEXTrading.IEXTradingConnection.Instance;
+            var result = await connection.GetQueryObject_REFERENCEDATA_SYMBOLS().QueryAsync();
+            listBoxSymbols.ItemsSource = result.Data.Symbols;
+        }
     }
 }
