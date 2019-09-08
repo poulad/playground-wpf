@@ -4,9 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinCore"
+        xmlns:iex="clr-namespace:IEXTrading.IEXTradingREFERENCEDATA_SYMBOLS;assembly=IEXTradingDotNetCore"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded" >
 
-    </Grid>
+    <DockPanel>
+        <ListBox DockPanel.Dock="Left" x:Name="listBoxSymbols">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="{x:Type iex:Symbols_REFERENCEDATA_SYMBOLS}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Path=Symbol}" FontWeight="Bold" Margin="1" />
+                        <TextBlock Grid.Column="1" Text="{Binding Path=Name}" Margin="2, 1" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+
+        <TextBlock FontStyle="Italic" DockPanel.Dock="Bottom">
+            Data provided for free by <Hyperlink NavigateUri="https://iextrading.com/developer">IEX</Hyperlink>.
+            View <Hyperlink NavigateUri="https://iextrading.com/api-exhibit-a/">IEX’s Terms of Use</Hyperlink>.
+        </TextBlock>
+
+    </DockPanel>
+
 </Window>

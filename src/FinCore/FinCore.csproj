@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="ReactiveUI.WPF" Version="10.1.1" />
+    <PackageReference Include="IEXTradingApi" Version="1.0.26" />
   </ItemGroup>
 
 </Project>
