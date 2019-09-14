@@ -1,22 +1,35 @@
-﻿using System.Windows;
+﻿using FinCore.ViewModels;
+using ReactiveUI;
+using System.Reactive.Disposables;
 
 namespace FinCore
 {
+    public abstract class MainWindowBase : ReactiveWindow<AppViewModel> { }
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MainWindowBase
     {
         public MainWindow()
         {
             InitializeComponent();
-        }
+            ViewModel = new AppViewModel();
 
-        private async void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            var connection = IEXTrading.IEXTradingConnection.Instance;
-            var result = await connection.GetQueryObject_REFERENCEDATA_SYMBOLS().QueryAsync();
-            listBoxSymbols.ItemsSource = result.Data.Symbols;
+            this.WhenActivated(disposableRegistration =>
+            {
+                this.OneWayBind(
+                    ViewModel,
+                    vm => vm.IsAvailable,
+                    v => v.listBoxSymbols.Visibility
+                ).DisposeWith(disposableRegistration);
+
+                this.OneWayBind(
+                    ViewModel,
+                    vm => vm.Symbols,
+                    v => v.listBoxSymbols.ItemsSource
+                ).DisposeWith(disposableRegistration);
+            });
         }
     }
 }
