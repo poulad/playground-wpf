@@ -8,13 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ReactiveUI.WPF" Version="10.1.1" />
+    <PackageReference Include="ReactiveUI.WPF" Version="10.1.6" />
     <PackageReference Include="IEXTradingApi" Version="1.0.26" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Views\" />
   </ItemGroup>
 
 </Project>
