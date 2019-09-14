@@ -4,8 +4,6 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using NuGet;
-using NuGet.Configuration;
 using NuGet.Protocol;
 using NuGet.Protocol.Core.Types;
 using ReactiveUI;
@@ -13,7 +11,7 @@ using PackageSource = NuGet.Configuration.PackageSource;
 
 namespace NugetBrowser.ViewModels
 {
-    class AppViewModel : ReactiveObject
+    public class AppViewModel : ReactiveObject
     {
         private string _searchTerm;
 
