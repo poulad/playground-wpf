@@ -8,8 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="2.6.0" />
+    <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.0" />
     <PackageReference Include="ReactiveUI.WPF" Version="10.1.6" />
     <PackageReference Include="IEXTradingApi" Version="1.0.26" />
+    <PackageReference Include="ShowMeTheXAML.MSBuild" Version="1.0.12" />
   </ItemGroup>
 
 </Project>

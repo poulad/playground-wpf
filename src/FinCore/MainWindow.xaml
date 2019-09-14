@@ -5,10 +5,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:iex="clr-namespace:IEXTrading.IEXTradingREFERENCEDATA_SYMBOLS;assembly=IEXTradingDotNetCore"
     xmlns:local="clr-namespace:FinCore"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
     Title="MainWindow"
     Width="800"
     Height="450"
+    Background="{DynamicResource MaterialDesignPaper}"
+    BorderThickness="1"
+    FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+    TextElement.FontSize="14"
+    TextElement.FontWeight="Medium"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
     mc:Ignorable="d">
 
     <DockPanel>
@@ -39,6 +47,17 @@
             .
             View<Hyperlink NavigateUri="https://iextrading.com/api-exhibit-a/">IEX’s Terms of Use</Hyperlink>
             .</TextBlock>
+
+        <materialDesign:Card
+            Margin="16"
+            Padding="32"
+            DockPanel.Dock="Top">
+            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">Welcome to FinCore</TextBlock>
+        </materialDesign:Card>
+        <Button
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="Click Me!" />
 
     </DockPanel>
 
