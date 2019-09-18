@@ -10,7 +10,11 @@
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="2.6.0" />
     <PackageReference Include="MaterialDesignThemes.MahApps" Version="0.1.0" />
-    <PackageReference Include="ReactiveUI.WPF" Version="10.1.6" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="ReactiveUI.WPF" Version="10.1.7" />
     <PackageReference Include="IEXTradingApi" Version="1.0.26" />
     <PackageReference Include="ShowMeTheXAML.MSBuild" Version="1.0.12" />
   </ItemGroup>

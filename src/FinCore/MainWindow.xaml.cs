@@ -1,6 +1,8 @@
 ﻿using FinCore.ViewModels;
 using ReactiveUI;
+using System.Reactive;
 using System.Reactive.Disposables;
+using System.Reactive.Linq;
 
 namespace FinCore
 {
@@ -29,6 +31,11 @@ namespace FinCore
                     vm => vm.Symbols,
                     v => v.listBoxSymbols.ItemsSource
                 ).DisposeWith(disposableRegistration);
+
+                Observable.Range(0, 1)
+                    .Select(_ => Unit.Default)
+                    .InvokeCommand(ViewModel.LoadAllSymbols)
+                    .DisposeWith(disposableRegistration);
             });
         }
     }

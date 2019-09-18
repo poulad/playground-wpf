@@ -26,7 +26,6 @@ namespace FinCore.ViewModels
             LoadAllSymbols = ReactiveCommand.CreateFromTask(QuerySymbolsAsync);
 
             _symbols = LoadAllSymbols
-                .Execute()
                 .ToProperty(this, nameof(Symbols), scheduler: RxApp.MainThreadScheduler);
 
             _isAvailable = this
